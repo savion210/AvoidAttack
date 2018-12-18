@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	[Serializedfield] 
+	[SerializeField]  
 	public bool SurvivalMode;
 
-    [Serializedfield]
+    [SerializeField] 
     public bool Levels; // you can change the name of this mode to anything you want, this is supposed to be the game mode thats beatable.
 
 
@@ -21,3 +22,4 @@ public class GameManager : MonoBehaviour {
 		
 	}
 }
+
