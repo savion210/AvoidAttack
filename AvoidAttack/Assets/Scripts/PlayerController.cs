@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	//GroundCheck
 	public bool IsGrounded;
 
-
+    public bool HasPickuo;
 
 	// Player Rotation
 	public float speedH; 

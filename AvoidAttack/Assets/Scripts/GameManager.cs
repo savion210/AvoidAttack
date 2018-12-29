@@ -11,14 +11,19 @@ public class GameManager : MonoBehaviour {
     [SerializeField] 
     public bool Levels; // you can change the name of this mode to anything you want, this is supposed to be the game mode thats beatable.
 
+    [SerializeField]
+    public GameObject[] buttons;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		
 	}
 }
