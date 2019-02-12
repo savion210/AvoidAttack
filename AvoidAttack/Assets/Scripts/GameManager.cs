@@ -5,26 +5,41 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	[SerializeField]  
-	public bool SurvivalMode;
+	
 
-    [SerializeField] 
-    public bool Levels; // you can change the name of this mode to anything you want, this is supposed to be the game mode thats beatable.
+    public bool B1; /// <summary>
+    /// /These bools are used to check to if the buttons have been pressed/////////
+    /// </summary>
+    public bool B2;
+    public bool B3;
+    public bool B4;
 
-    [SerializeField]
-    public GameObject[] buttons;
+    public bool IsPickup;
+
+    public ButtonManager[] Buttons;
 
 
-    // Use this for initialization
+
+    //public ButtonManager MyButtonManger; // Calling on ButtonManger to gain access to its public variables and fucntions
+   
     void Start () {
-		
-	}
+
+    
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
+        if (B1 && B2 && B3 && B4 && IsPickup) 
+        {
+            Debug.Log("All Buttons Have been Activated!!!");
+            foreach(ButtonManager Button in Buttons)
+            {
+                Button.Reset(); 
+            }
+        }
 
-		
-	}
+    }
+
 }
 

@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
 	//GroundCheck
 	public bool IsGrounded;
 
-    public bool HasPickuo;
+    //Checking to
+    public bool HasPickup;
 
 	// Player Rotation
 	public float speedH; 
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour {
 	private float yaw = 0.0f;
 	private float pitch = 0.0f;
 
+    public bool ForceAbility;/// <summary>
+    /// Whichever one of these is true then that ability is active...
+    /// if whichever bool is true then {fucntianlity for that ability goes *here*}
+    /// </summary>
+    public bool LaserAbility;
 
 
 
@@ -33,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 
 		//Player Movement
 		if (Input.GetKey (KeyCode.W))
@@ -59,14 +66,28 @@ public class PlayerController : MonoBehaviour {
 		{
 			transform.Translate (0,  JumpHeight * Time.deltaTime, 0); //Move Up/Jump
 		}
+        //Player movemnt ends here
 
+        //Functionality for the the different abilties
 
-		// Player rotation
-		yaw += speedH * Input.GetAxis("Mouse X");
+        if (ForceAbility)
+        {
+            Debug.Log("Force push is active");
+        }
+
+        if (LaserAbility)
+        {
+            Debug.Log("Laser blast is active");
+        }
+
+        //Functionality for the the different abilties ends here
+
+        // Player rotation
+        yaw += speedH * Input.GetAxis("Mouse X");
 		pitch -= speedV * Input.GetAxis("Mouse Y");
 
 		transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
-
+        //player roatation ends here
 	}
 
     public void PickUp ()
